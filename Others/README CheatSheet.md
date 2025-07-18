@@ -2,7 +2,7 @@
 
 In this file we will document how to use markdown to create an engaging readme
 
-# 2. What we will learn in this lesson
+# 2. What we will learn in this lesson :cd:
 
     - How to create a markdownfile
     - How to write markdown syntax
@@ -24,3 +24,22 @@ You can find all the emoji's here:
 
 1. Mac : **MacDown**
 2. Windows : **ghostwriter** or **MarkdownEditor**
+
+# Our Program
+
+- To load an image use an exclamation mark in square brackets **![Alternate text]** e.g : ![Image of the cat]
+
+![Reference Image](./images/logo.png)
+
+- To show our code using markdown we can use backticks `` for single line of code
+
+`printf("hello world")`
+
+\*to show multiple lines of code use **three backticks**
+
+```csharp
+public class Person(ILogger logger): controller
+{
+
+}
+```
