@@ -2,7 +2,7 @@
 
 In this file we will document how to use markdown to create an engaging readme
 
-# 2. What we will learn in this lesson :cd:
+# 2. What we will learn in this lesson
 
     - How to create a markdownfile
     - How to write markdown syntax
@@ -43,3 +43,11 @@ public class Person(ILogger logger): controller
 
 }
 ```
+
+# Websites to improvise README file
+
+- <https://banner.godori.dev/> --> Used to make Banners for the Peojects
+
+- <https://shields.io/> --> Used Brief Info of the Repository
+
+- <https://carbon.now.sh> --> Generates the image of code snippets
