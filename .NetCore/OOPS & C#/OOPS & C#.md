@@ -5,7 +5,9 @@
 - C# is a modern, object oriented programming language which is developed by microsoft. It is primarily used for developing aplications on .NET platform --- such as Web Applications, Desktop Applications, APIs, Mobile Applications using .NET MAUI or Xamarin.
 - .NET Framework, on the other hand is the complete development platform which consists of CLR(Common Language Runtime), Class Libraries and tools required to build and run applications which are written in C#, F# and other .NET Supported languages
 
-<p align="center"><img src="./images/.NET_arch.png" alt=".NET Architecture" width="50%" /></p>
+<!-- <p align="center"><img src="./images/.NET_arch.png" alt=".NET Architecture" width="50%" /></p> -->
+
+![.NET Architecture](./images/.NET_arch.png)
 
 ---
 
@@ -60,7 +62,7 @@
   - Partial Class
   - Sealed Class
 
-<p align="center"><img src="./images/classtypes.png" alt="class types" width="45%" /></p>
+<p align="center"><img src="./images/ClassTypes.png" alt="class types" width="45%" /></p>
 
 ---
 
@@ -167,3 +169,139 @@ public class Employee
   }
 }
 ```
+
+---
+
+### ❓11. What is Polymorphism ?
+
+**Answer:**
+
+- Polymorphism is the ability of variable, method or object to behave differently based on the context.
+  1. Compile-time polymorphism ( Method overloading, operator overloading )
+  2. Run-time polymorphism ( Method overriding )
+
+```csharp
+public class ComplexNumber
+{
+  public int X;
+  public int Y;
+
+  public ComplexNumber(int x, int y)
+  {
+    X = x;
+    Y = y;
+  }
+
+  public static ComplexNumber operator +(ComplexNumber a, ComplexNumber b)
+  {
+    return new ComplexNumber(a.X+b.X, a.Y+b.Y);
+  }
+
+  public override String toString()
+  {
+    return $"{X} + i{Y}";
+  }
+}
+
+
+ComplexNumber num1 = new ComplexNumber(1,2);
+ComplexNumber num2 = new ComplexNumber(3,4);
+
+ComplexNumber num3 = num1 + num2;
+```
+
+---
+
+### ❓❓❓12. If two methods are same except return type, then methods are overloaded or what will happen ?
+
+**Answer:**
+
+- No, this will show compile time error.
+
+```csharp
+public class Employee
+{
+  public int GetSalary(int designation)   ❌❌❌
+  {
+    return 100000;
+  }
+  public string GetSalary(int designation)  ❌❌❌
+  {
+    return "100000";
+  }
+}
+```
+
+---
+
+### ❓ 13. What is the difference between Method Overriding and Method Hiding ?
+
+**Answer:**
+
+- With method hiding we can completely hide the implementation of the methods of the base class from the derived class using **new** keyword
+
+| Feature              | Method Hiding                    | Method Overriding            |
+| -------------------- | -------------------------------- | ---------------------------- |
+| Keyword              | `new`                            | `override`                   |
+| Base method required | No `virtual` needed              | Must be `virtual`/`abstract` |
+| Decided at           | Compile-time (by reference type) | Runtime (by object type)     |
+| Polymorphism         | ❌ Not supported                 | ✅ Supported                 |
+
+```csharp
+public class BaseClass
+{
+  public void Greetings()
+  {
+    Console.WriteLine("BaseClass Hello! ");
+  }
+}
+
+public class ChildClass
+{
+  public new void Greetings()
+  {
+    Console.WriteLine("ChildClass Hello! ");
+  }
+}
+
+
+BaseClass obj = new ChildClass();
+obj.Greetings();
+
+//OUTPUT :-  BaseClass Hello!
+// result is based on the Reference Type but not of Object Type
+```
+
+---
+
+### ❓ 14. What are the difference between an Abstract class and an Interface ?
+
+**Answer:**
+
+| Feature              | Abstract Class                                            | Interface                                          |
+| -------------------- | --------------------------------------------------------- | -------------------------------------------------- |
+| Method Definitions   | Can have both **method declarations** and **definitions** | Only **method declarations**                       |
+| Keyword Used         | `abstract`                                                | `interface`                                        |
+| Multiple Inheritance | ❌ Not supported                                          | ✅ Supported                                       |
+| Constructors         | Can have constructors                                     | Cannot have constructors                           |
+| Access Modifiers     | Can have access modifiers on methods                      | All methods are implicitly `public` and `abstract` |
+| Fields/Variables     | Can contain fields/variables                              | Cannot contain instance fields                     |
+
+---
+
+### ❓15. What is Interface ? What are the benifits of using interface ?
+
+**Answer:**
+
+- Interface is a contract which defines the methods,properties of a class.
+- Interface instructs the class **what to do** but not **how to do**
+- Loose coupling is possible with interfaces which benefits in development and unit testing.
+- Interfaces used for Dependency Injections.
+
+---
+
+### ❓16. Can Abstract Class be Sealed or Static in C# ?
+
+**Answer:**
+
+- No, Abstract class purpose is to act as the BaseClass for which ever the class inherits it.
