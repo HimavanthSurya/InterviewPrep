@@ -305,3 +305,45 @@ obj.Greetings();
 **Answer:**
 
 - No, Abstract class purpose is to act as the BaseClass for which ever the class inherits it.
+
+---
+
+### ❓17. What are the different ways of method overriding ?
+
+**Answer:**
+
+1. Conventional Method Overriding
+2. Abstract Method Overriding
+3. Interface Method Overriding
+4. virtual override chain
+5. Sealed Method Overriding
+6. Generic Method Overriding
+
+**Note** : The methods only with **virtual, abstract, override** in base class can be overridden.
+
+---
+
+### ❓18. What are access specifiers ?
+
+**Answer:**
+Access Modifiers are the keywords which are used to specify the accessability of the class, method, property and field.
+
+public, private, protected, internal, protected internal.
+
+---
+
+### ❓19. What is the default access modifier in a class ?
+
+**Answer:**
+
+1. For a top-level class, internal is the default access modifier
+2. For inner class, private is the default access modifier
+
+---
+
+### ❓20. What is boxing and unboxing ?
+
+**Answer:**
+
+1. Boxing is the process of converting from value type to reference type.
+2. Unboxing is the process of converting reference type to value type.
